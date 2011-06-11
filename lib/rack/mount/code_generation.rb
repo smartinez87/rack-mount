@@ -85,7 +85,6 @@ module Rack::Mount
 
         instance_eval(<<-RUBY, __FILE__, __LINE__)
           def recognize(obj)
-            cache = {}
             container = @recognition_graph[#{keys}]
             optimize_container_iterator(container) unless container.respond_to?(:optimized_each)
 
